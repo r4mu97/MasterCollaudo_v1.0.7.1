@@ -1066,7 +1066,7 @@ Public Class CollaudoETSDN
             varTxEtsdn.SetState5V(0)
         End If
 
-        I
+
     End Sub
     Public Sub AvvioTest5V()
         statoCollaudo.tmrCargo5v.Start()

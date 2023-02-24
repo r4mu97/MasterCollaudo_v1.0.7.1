@@ -1315,7 +1315,7 @@ Partial Class CollaudoETSDN
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.InactiveCaption
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.ClientSize = New System.Drawing.Size(813, 473)
+        Me.ClientSize = New System.Drawing.Size(831, 473)
         Me.Controls.Add(Me.ErrorTestCAN)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.StatoTestCAN)
