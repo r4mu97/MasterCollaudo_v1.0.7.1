@@ -1044,13 +1044,13 @@ Public Class CollaudoETSDN
 
         If varETSDN.end_test_5v And varETSDN.end_test_10v Then
 
-            If Not varETSDN.result_test_5v Then
+            If varETSDN.result_test_5v = 0 Then
                 ChangeControlVisibility(ANA5V_OK, True)
             Else
                 ChangeControlVisibility(ANA5V_NOT, True)
             End If
 
-            If Not varETSDN.result_test_10v Then
+            If varETSDN.result_test_10v = 0 Then
                 ChangeControlVisibility(ANA10V_OK, True)
             Else
                 ChangeControlVisibility(ANA10V_NOT, True)
