@@ -713,7 +713,7 @@ Public Class CollaudoETSDN
 
                 Case 3
                     If CheckIP.Checked And Not abortTests Then
-                        If Not statoCollaudo.testIngressiSuccess And (timValidation.ElapsedMilliseconds <= 40000) Then
+                        If Not statoCollaudo.testIngressiSuccess And (timValidation.ElapsedMilliseconds <= 15000) Then
                             ChangeControlVisibility(LoadingIP, True)
                             AvvioTestIngressi()
                             If statoCollaudo.testIngressiCompleted Then
@@ -1042,23 +1042,23 @@ Public Class CollaudoETSDN
         ChangeControlText(ANAVolt5, varETSDN.rANA5.ToString / 1000)
         ChangeControlText(ANAVolt10, varETSDN.rANA10.ToString / 1000)
 
-        If varETSDN.end_test_5v Then
-            If varETSDN.result_test_5v Then
+        If varETSDN.end_test_5v And varETSDN.end_test_10v Then
+
+            If Not varETSDN.result_test_5v Then
                 ChangeControlVisibility(ANA5V_OK, True)
             Else
-                ChangeControlVisibility(ANA5V_NOT, False)
+                ChangeControlVisibility(ANA5V_NOT, True)
             End If
-        End If
 
-        If varETSDN.end_test_10v Then
-            If varETSDN.result_test_10v Then
+            If Not varETSDN.result_test_10v Then
                 ChangeControlVisibility(ANA10V_OK, True)
             Else
-                ChangeControlVisibility(ANA10V_OK, True)
+                ChangeControlVisibility(ANA10V_NOT, True)
             End If
+
         End If
 
-        If statoCollaudo.testIPcompleted And varETSDN.result_test_5v And varETSDN.result_test_10v Then
+        If statoCollaudo.testIPcompleted And ANA5V_OK.Visible And ANA10V_OK.Visible Then
             statoCollaudo.testIngressiCompleted = True
             reportAna.SetResultANA1(pass:=True)
             reportAna.SetResultANA2(pass:=True)
