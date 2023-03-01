@@ -6,7 +6,7 @@ errorlog.txt
 *.exe.config
 *.exe.manifest
 *.ldb
-
+*.opt
 packages/
 FlashedLOL/Bootloader/KiwiCall - Pulsante/.DEFAULT.ets.swo
 FlashedLOL/Bootloader/KiwiCall - Pulsante/.DEFAULT.ets.swp
